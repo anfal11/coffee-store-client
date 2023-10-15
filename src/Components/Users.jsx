@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Header from "./Header";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import Swal from "sweetalert2";
@@ -57,6 +57,7 @@ const Users = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Id Created</th>
+              <th>Last signed in</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -73,11 +74,14 @@ const Users = () => {
                 <td>{u.name}</td>
                 <td>{u.email}</td>
                 <td>{u.createdAt}</td>
+                <td>{u.lastSignInTime}</td>
                 <td>
                   {" "}
+                  <Link to={`/updateUser/${u._id}`}>
                   <button className="btn bg-[#3C393B] text-white text-xl">
               <AiOutlineEdit></AiOutlineEdit>
             </button>
+            </Link>
                   <button
                     onClick={() => handleDeleteTable(u._id)}
                     className="btn bg-[#EA4744] text-white text-xl"
