@@ -1,11 +1,11 @@
 
 
-const UpdateCoffee = () => {
+const UpdateCOffee = () => {
     return (
         <div>
-             <h1 className="font-Rancho text-6xl">Update Coffee</h1>
+            <h1 className="font-Rancho text-6xl">Update Coffee</h1>
         </div>
     );
 };
 
-export default UpdateCoffee;
+export default UpdateCOffee;

@@ -8,20 +8,24 @@ import {
 import './index.css'
 import AddCoffee from './Components/AddCoffee.jsx';
 import UpdateCoffee from './Components/UpdateCOffee.jsx';
+import ErrorPage from './Components/ErrorPage.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    loader: () => fetch('http://localhost:5000/coffee')
+    loader: () => fetch('http://localhost:5000/coffee'),
+    errorElement: <ErrorPage />
   },
   {
     path: "/addCoffee",
     element: <AddCoffee />,
   },
   {
-    path: "/udateCoffee",
-    element: <UpdateCoffee />,
+    path: "/updateCoffee",
+    element: <UpdateCoffee />, 
+    loader: ({params})=> fetch(`http://localhost:5000/coffee/${params.id}`)
   }
 ]);
 

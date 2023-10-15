@@ -1,6 +1,7 @@
 import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const CoffeeCard = ({ coffee, coffeeData, setCoffeeData }) => {
   // eslint-disable-next-line no-unused-vars
@@ -80,9 +81,11 @@ const CoffeeCard = ({ coffee, coffeeData, setCoffeeData }) => {
             <button className="btn bg-[#D2B48C] text-white text-xl">
               <AiOutlineEye></AiOutlineEye>
             </button>
+            <Link to={`/updateCoffee/${_id}`}>
             <button className="btn bg-[#3C393B] text-white text-xl">
               <AiOutlineEdit></AiOutlineEdit>
             </button>
+            </Link>
             <button
               onClick={() => handleDelete(_id)}
               className="btn bg-[#EA4744] text-white text-xl"
