@@ -1,5 +1,6 @@
-import { Form, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
 
@@ -15,6 +16,27 @@ const AddCoffee = () => {
         const photo = form.get('photo');
         const newCoffee = { name, chef, supplier, taste, category, details, photo };
         console.log(newCoffee);
+
+        // send data to the server
+        fetch('http://localhost:5000/coffee', {
+            method: 'POST',
+            headers: { 
+                'content-type': 'application/json' 
+            },
+            body: JSON.stringify(newCoffee)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Coffee added successfully.',
+                  })
+                  e.target.reset();
+            }
+        })
+
     }
   return (
     <div>
