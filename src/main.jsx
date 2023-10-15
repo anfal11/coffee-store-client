@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import './index.css'
 import AddCoffee from './Components/AddCoffee.jsx';
-import UpdateCoffee from './Components/UpdateCOffee.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
+import UpdateCoffee from './Components/UpdateCOffee.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,11 +22,17 @@ const router = createBrowserRouter([
     path: "/addCoffee",
     element: <AddCoffee />,
   },
+  // {
+  //   path: "/updateCoffee",
+  //   element: <UpdateCOffee />,
+  //   loader: ({params})=> fetch(`http://localhost:5000/coffee/${params.id}`)
+  // }
   {
-    path: "/updateCoffee",
-    element: <UpdateCoffee />, 
-    loader: ({params})=> fetch(`http://localhost:5000/coffee/${params.id}`)
+    path: "/updateCoffee/:id",
+    element: <UpdateCoffee />,
+    loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`),
   }
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

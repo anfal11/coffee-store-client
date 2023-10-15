@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const CoffeeCard = ({ coffee, coffeeData, setCoffeeData }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   // eslint-disable-next-line no-unused-vars
   const { _id, name, chef, supplier, taste, category, details, photo } = coffee;
 
@@ -28,9 +28,9 @@ const CoffeeCard = ({ coffee, coffeeData, setCoffeeData }) => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
-              const remainingCoffee = coffeeData.filter((coffee) => coffee._id !== _id
+              const remainingCoffee = coffees.filter((cof) => cof._id !== _id
               );
-              setCoffeeData(remainingCoffee);
+              setCoffees(remainingCoffee);
             }
           });
       }
@@ -101,7 +101,7 @@ const CoffeeCard = ({ coffee, coffeeData, setCoffeeData }) => {
 
 CoffeeCard.propTypes = {
   coffee: PropTypes.object.isRequired,
-  coffeeData: PropTypes.array.isRequired,
-    setCoffeeData: PropTypes.func.isRequired,
+  coffees: PropTypes.array.isRequired,
+  setCoffees: PropTypes.func.isRequired,
 };
 export default CoffeeCard;
