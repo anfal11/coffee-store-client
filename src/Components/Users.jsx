@@ -6,8 +6,9 @@ import { useState } from "react";
 
 const Users = () => {
   const userLoader = useLoaderData();
-  const [user, setUser] = useState(userLoader); // eslint-disable-line no-unused-vars
 
+  const [user, setUser] = useState(userLoader); // eslint-disable-line no-unused-vars
+    
   const handleDeleteTable = (_id) => {
     // console.log(_id);
     Swal.fire({
