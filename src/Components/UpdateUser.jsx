@@ -17,7 +17,7 @@ const UpdateUser = () => {
         const email = form.get('email');
         const updatedUser = { name, email };
 
-        fetch(`http://localhost:5000/users/${_id}`, {
+        fetch(`https://coffee-store-server-1zht38tqt-anfal11.vercel.app/users/${_id}`, {
             method: 'PUT',
             headers: { 
                 'content-type': 'application/json' 
