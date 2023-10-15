@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Signup = () => {
+
+    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,6 +17,29 @@ const Signup = () => {
         const password = form.get('password');
         const newUser = { name, email, password };
         console.log(newUser);
+        createUser(email, password)
+        .then((res) => {
+            console.log(res.user);
+            Swal.fire({
+                icon: 'success',
+                title: 'User created successfully.',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                background: '#fff url(/images/trees.png)',
+                backdrop: `
+                  rgba(0,0,123,0.4)
+                  url("https://i.imgur.com/0fuV3ip.gifv")
+                  left top
+                  no-repeat
+                `
+              })
+              e.target.reset();
+                navigate('/signin');
+        })
+        .catch((err) => {
+            console.log(err.message);
+        })
     }
     return (
         <div>
