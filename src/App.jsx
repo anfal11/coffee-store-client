@@ -78,13 +78,15 @@ function App() {
           ---Slip & Savor---
         </h1>
         <h1 className="font-Rancho mt-3 text-[#331A15] text-4xl md:text-5xl">Our Popular Products</h1>
+        <Link to='/addcoffee'>
         <button className="text-lg mt-4 md:text-2xl font-Rancho text-white bg-[#E3B577] px-3 py-0 md:px-7 md:py-2 rounded-lg">
             <span className="flex items-center gap-2">Add Coffee <AiOutlineCoffee className="text-black"></AiOutlineCoffee></span>
           </button>
+        </Link>
       </div>
 
-      <div className="max-w-[1620px] mx-auto mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="my-12 max-w-[1620px] mx-auto ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {
                 coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
             }
