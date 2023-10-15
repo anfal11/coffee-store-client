@@ -1,9 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import {AiOutlineCoffee} from 'react-icons/ai'
 import CoffeeCard from "./Components/CoffeeCard";
+import { useState } from "react";
 
 function App() {
   const coffees = useLoaderData();
+  const [coffeeData, setCoffeeData] = useState(coffees);
 
   return (
     <>
@@ -88,7 +90,7 @@ function App() {
       <div className="my-12 max-w-[1620px] mx-auto ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {
-                coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+                coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee} coffeeData = {coffeeData} setCoffeeData = {setCoffeeData}></CoffeeCard>)
             }
           </div>
       </div>
