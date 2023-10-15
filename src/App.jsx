@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import {AiOutlineCoffee} from 'react-icons/ai'
 import CoffeeCard from "./Components/CoffeeCard";
 import { useState } from "react";
+import Header from "./Components/Header";
 
 function App() {
   const loadedCoffees = useLoaderData();
@@ -16,15 +17,19 @@ function App() {
           className="w-full"
         />
         <Link to="/">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-white md:text-2xl lg:text-6xl font-Rancho">
+          <div className="absolute top-1/2 left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-10 text-white md:text-2xl lg:text-6xl font-Rancho">
             <img
               src="https://i.ibb.co/8ccYMxt/logo1-1.png"
               alt=""
-              className="w-6 md:w-12 lg:w-20 h-10 md:h-12 lg:h-20 mr-2 inline-block" // Adjust the width, height, and margin as needed
+              className="w-6 md:w-12 lg:w-20 h-10 md:h-12 lg:h-20 mr-2 inline-block" 
             />
             Espresso Emporium
           </div>
         </Link>
+        <div className="absolute -top-[40%] md:top-0 xl:top-[25%] left-1/2 md:left-[70%] transform -translate-x-1/3 lg:-translate-x-1/2 -translate-y-1/2 z-10 text-base md:text-2xl lg:text-4xl font-Rancho drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
+    <Header />
+    </div>
+
       </div>
 
       <div className="relative">

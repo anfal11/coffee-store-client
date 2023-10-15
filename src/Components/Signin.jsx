@@ -1,10 +1,16 @@
 /* eslint-disable react/no-unknown-property */
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 
 const Signin = () => {
     return (
         <div>
+            <div className="bg-gray-200">
+    <Header />
+    </div>
+
+
               <section className="border-red-500 bg-gray-200 min-h-screen flex items-center justify-center">
     <div className="bg-gray-100 p-5 flex rounded-2xl shadow-lg max-w-3xl">
       <div className="md:w-1/2 px-5">

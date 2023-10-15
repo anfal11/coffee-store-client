@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Swal from 'sweetalert2'
+import Header from "./Header";
 
 const AddCoffee = () => {
 
@@ -40,6 +41,9 @@ const AddCoffee = () => {
     }
   return (
     <div>
+    <div className="shadow-xl">
+    <Header />
+    </div>
     <div className="max-w-[1320px] mx-auto">
       <Link className="flex items-center space-x-4 mt-12" to="/">
         <AiOutlineArrowLeft />
