@@ -8,12 +8,12 @@ import {
 import './index.css'
 import AddCoffee from './Components/AddCoffee.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
-import UpdateCoffee from './Components/UpdateCOffee.jsx';
 import Signup from './Components/Signup.jsx';
 import Signin from './Components/Signin.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
 import Users from './Components/Users.jsx';
 import UpdateUser from './Components/UpdateUser.jsx';
+import UpdateCoffee from './Components/UpdateCoffee.jsx';
 
 
 const router = createBrowserRouter([
