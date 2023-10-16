@@ -20,7 +20,7 @@ const Signup = () => {
         console.log(res.user);
         const createdAt = res?.user?.metadata?.creationTime;
         const newUser = { name, email, password, createdAt: createdAt };
-        fetch("https://coffee-store-server-1zht38tqt-anfal11.vercel.app/users", {
+        fetch("https://coffee-store-server-1xx3ez9au-anfal11.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

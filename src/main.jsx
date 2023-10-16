@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    loader: () => fetch('https://coffee-store-server-1zht38tqt-anfal11.vercel.app/coffee'),
+    loader: () => fetch('https://coffee-store-server-1xx3ez9au-anfal11.vercel.app/coffee'),
     errorElement: <ErrorPage />
   },
   {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
   {
     path: "/updateCoffee/:id",
     element: <UpdateCoffee />,
-    loader: ({ params }) => fetch(`https://coffee-store-server-1zht38tqt-anfal11.vercel.app/coffee/${params.id}`),
+    loader: ({ params }) => fetch(`https://coffee-store-server-1xx3ez9au-anfal11.vercel.app/coffee/${params.id}`),
   },
   {
     path: "/signup",
@@ -43,12 +43,12 @@ const router = createBrowserRouter([
   {
     path: "/users",
     element: <Users />,
-    loader: () => fetch('https://coffee-store-server-1zht38tqt-anfal11.vercel.app/users'),
+    loader: () => fetch('https://coffee-store-server-1xx3ez9au-anfal11.vercel.app/users'),
   },
   {
     path: "/updateUser/:id",
     element: <UpdateUser />,
-    loader: ({ params }) => fetch(`https://coffee-store-server-1zht38tqt-anfal11.vercel.app/users/${params.id}`),
+    loader: ({ params }) => fetch(`https://coffee-store-server-1xx3ez9au-anfal11.vercel.app/users/${params.id}`),
   }
   
   

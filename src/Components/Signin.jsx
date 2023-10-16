@@ -25,7 +25,7 @@ const Signin = () => {
         };
 
         // update lastSignedAt in the database
-        fetch("https://coffee-store-server-1zht38tqt-anfal11.vercel.app/users", {
+        fetch("https://coffee-store-server-1xx3ez9au-anfal11.vercel.app/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
